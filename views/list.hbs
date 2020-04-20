@@ -1,0 +1,77 @@
+<head>
+  <mea charset="UTF-8">
+  <link rel="stylesheet" type="text/css/x-handlebars-template" href="style.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <a class="font-weight-bold h1" href="#">The indian Express &nbsp</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#newsMenu" aria-controls="newsMenu" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="newsMenu">
+       <div class="navbar-nav">
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/list">Home &nbsp</a>
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/sports">Sports &nbsp</a>
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/Education">Education &nbsp</a>
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/Business">Business &nbsp</a>
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/Tech">Tech &nbsp</a>
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/corona">Corona Outbreak &nbsp</a>
+          <a class="nav-item nav-link" href="http://localhost:3000/contacts/lifestyle">Life Style &nbsp</a>
+
+       </div>
+     </div>
+    </nav>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+           <h2 class="display-4 text-danger">Get the latest trending news on hot topics.</h2>
+           <hr class="my-4">
+           <p> Subscribe for the latest news</p>
+           <button type="button" class="btn btn-danger" >Subscribe</button>
+        </div>
+      </div>
+    </div>
+    
+     <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center bg-dark text-white">Headlines</h2>
+          <hr class=my-4>
+        </div>
+     </div>
+{{#each data}}
+<div class="row mt-5">
+    <div class="col-md-4">
+       <img src="{{this.im}}" width=500 height=600
+       class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+           <div class="col-md-12">
+              <h1> {{this.title}}</h1>
+           </div>
+
+        </div>
+        <div class="row">
+             <div class="col-md-12">
+               <p>{{this.News}}</p>
+           </div>
+        </div>
+        <div class="row">
+             <div class="col-md-12">
+               <a href="{{this.readmore}}" target="_blank" class="btn btn-primary">Read more</a>
+               </div>
+        </div>
+
+    </div>
+  </div>
+{{/each}}
+
+</div>
+
+</body>
